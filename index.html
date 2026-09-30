@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Case Files</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <section class="stage">
+            <video id="bgVideo" muted loop playsinline></video>
+            <img id="bgImage" src="assets/office.jpg" alt="">
+            <div class="overlay"></div>
+
+            <section id="loginScreen" class="screen active">
+                <div class="card loginCard">
+                    <p class="tag">AI Detective Horror Game</p>
+                    <h1>Shadow Case Files</h1>
+                    <p class="bodyText">Login to start the investigation.</p>
+                    <input id="usernameInput" type="text" placeholder="Enter username">
+                    <button id="loginBtn">Login</button>
+                </div>
+            </section>
+
+            <section id="menuScreen" class="screen">
+                <div class="card menuCard">
+                    <p class="tag" id="welcomeText">Welcome Detective</p>
+                    <h1>Shadow Case Files</h1>
+                    <p class="bodyText">Play 5 levels, solve evidence puzzles, unlock interrogation, and close the case.</p>
+
+                    <div class="buttonGrid">
+                        <button id="newGameBtn">New Game</button>
+                        <button id="resumeBtn">Resume</button>
+                        <button id="soundBtn">Sound On</button>
+                    </div>
+
+                    <div class="infoBox">
+                        <b>Controls</b>
+                        <span>Choose answer: mouse click</span>
+                        <span>Scan: F</span>
+                        <span>Hint: H</span>
+                        <span>Next level: N</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="levelScreen" class="screen">
+                <header class="hud">
+                    <span id="hudUser">Detective</span>
+                    <span id="hudLevel">Level 1 / 5</span>
+                    <span id="hudScore">Score: 0</span>
+                </header>
+
+                <article class="card levelCard">
+                    <p class="tag" id="levelTag">Level 1</p>
+                    <h2 id="levelTitle">The Midnight Call</h2>
+                    <p id="levelStory" class="bodyText"></p>
+
+                    <div class="taskPanel">
+                        <h3>Level Tasks</h3>
+                        <div id="taskList"></div>
+                    </div>
+
+                    <div class="playPanel">
+                        <h3 id="actionTitle">Playable Action</h3>
+                        <p id="actionText"></p>
+                        <div id="choiceButtons" class="choiceButtons"></div>
+                    </div>
+
+                    <div class="buttonGrid">
+                        <button id="scanBtn">Scan (F)</button>
+                        <button id="hintBtn">Hint (H)</button>
+                        <button id="nextBtn" disabled>Next Level (N)</button>
+                    </div>
+                </article>
+            </section>
+
+            <section id="interrogationScreen" class="screen">
+                <article class="card levelCard">
+                    <p class="tag" id="questionTag">Question 1 / 3</p>
+                    <h2>Interrogation</h2>
+                    <p id="questionText" class="bodyText"></p>
+                    <div id="answerButtons" class="choiceButtons"></div>
+                </article>
+            </section>
+
+            <section id="endingScreen" class="screen">
+                <div class="card menuCard">
+                    <p class="tag">Final Report</p>
+                    <h1 id="endingTitle">Case Closed</h1>
+                    <p id="endingText" class="bodyText"></p>
+                    <button id="playAgainBtn">Play Again</button>
+                </div>
+            </section>
+        </section>
+
+        <aside class="sidePanel">
+            <header>
+                <h2>AI Assistant</h2>
+                <p id="statusText">Login first</p>
+            </header>
+
+            <section id="aiLog" class="aiLog"></section>
+
+            <section class="inventoryPanel">
+                <h3>Inventory</h3>
+                <div id="inventory" class="inventory"></div>
+            </section>
+
+            <section class="chatPanel">
+                <input id="chatInput" type="text" placeholder="Ask AI: help, clue, suspect">
+                <button id="askBtn">Ask</button>
+            </section>
+        </aside>
+    </main>
+
+    <audio id="music" src="assets/mysterious.mp3" loop></audio>
+    <audio id="creepy" src="assets/creepy.mp3"></audio>
+    <audio id="murder" src="assets/creepy murder.mp3"></audio>
+    <audio id="missing" src="assets/missing.mp3"></audio>
+    <audio id="interrogation" src="assets/interrogation.mp3"></audio>
+
+    <script src="game.js"></script>
+</body>
+</html>
